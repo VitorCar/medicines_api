@@ -2,6 +2,7 @@ import os
 import json
 from rest_framework.response import Response
 from rest_framework import views, status
+from rest_framework.permissions import IsAuthenticated
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -13,6 +14,7 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 class SearchPharmacyAPIView(views.APIView):
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
 
@@ -63,6 +65,7 @@ class SearchPharmacyAPIView(views.APIView):
 
 
 class MedicineLeafletAPIView(views.APIView):
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
 
