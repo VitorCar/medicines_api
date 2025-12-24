@@ -14,7 +14,7 @@ from manufacturers.serializers import ManufacturersSerializer
     post=extend_schema(
         description='Criar um fabricante',
         request=ManufacturersSerializer,
-        responses={200: ManufacturersSerializer}
+        responses={201: ManufacturersSerializer}
     )
 )
 class ManufacturersListCreateAPIView(generics.ListCreateAPIView):
@@ -22,6 +22,7 @@ class ManufacturersListCreateAPIView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermissions,)
     queryset = Manufacturers.objects.all()
     serializer_class = ManufacturersSerializer
+
 
 @extend_schema_view(
     get=extend_schema(
@@ -36,7 +37,7 @@ class ManufacturersListCreateAPIView(generics.ListCreateAPIView):
     patch=extend_schema(
         description='Atualiza parcialmente os dados de um fabricante',
         request=ManufacturersSerializer,
-        responses={200, ManufacturersSerializer}
+        responses={200: ManufacturersSerializer}
     ),
     delete=extend_schema(
         description='Remove um fabricante do sistema',

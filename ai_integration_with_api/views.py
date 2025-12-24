@@ -3,6 +3,7 @@ import json
 from rest_framework.response import Response
 from rest_framework import views, status
 from rest_framework.permissions import IsAuthenticated
+from drf_spectacular.utils import extend_schema, OpenApiTypes
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -13,6 +14,16 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
+@extend_schema(
+    description='Busca uma lista de farmácias reais em uma cidade e estado especificados, utilizando inteligência artificial.',
+    request=OpenApiTypes.OBJECT,
+    responses={
+        200: OpenApiTypes.OBJECT,
+        400: OpenApiTypes.OBJECT,
+        502: OpenApiTypes.OBJECT,
+        500: OpenApiTypes.OBJECT
+    }
+)
 class SearchPharmacyAPIView(views.APIView):
     permission_classes = (IsAuthenticated,)
 
@@ -64,6 +75,16 @@ class SearchPharmacyAPIView(views.APIView):
             )
 
 
+@extend_schema(
+    description='Gera uma ficha técnica resumida para um medicamento especificado, utilizando inteligência artificial.',
+    request=OpenApiTypes.OBJECT,
+    responses={
+        200: OpenApiTypes.OBJECT,
+        400: OpenApiTypes.OBJECT,
+        502: OpenApiTypes.OBJECT,
+        500: OpenApiTypes.OBJECT
+    }
+)
 class MedicineLeafletAPIView(views.APIView):
     permission_classes = (IsAuthenticated,)
 

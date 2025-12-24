@@ -1,6 +1,7 @@
 from django.db.models import Count
 from rest_framework import generics, views, response, status
 from rest_framework.permissions import IsAuthenticated
+from drf_spectacular.utils import extend_schema_view, extend_schema, OpenApiTypes
 from app.permissions import GlobalDefaultPermissions
 from drug_identification.models import DrugIdentification
 from drug_identification.serializers import DrugIdentificationSerializer, DrugIdentificationListSerializer
@@ -9,6 +10,17 @@ from pharmaceutical_forms.models import PharmaceuticalForms
 from routes_of_administration.models import RoutesOfAdministration
 
 
+@extend_schema_view(
+    get=extend_schema(
+        description='Retorna todas identificação de medicamentos',
+        responses={200: DrugIdentificationListSerializer}
+    ),
+    post=extend_schema(
+        description='Criar uma identificação de medicamento',
+        request=DrugIdentificationSerializer,
+        responses={201: DrugIdentificationSerializer}
+    )
+)
 class DrugIdentificationListCreateAPIView(generics.ListCreateAPIView):
 
     permission_classes = (IsAuthenticated, GlobalDefaultPermissions,)
@@ -20,6 +32,26 @@ class DrugIdentificationListCreateAPIView(generics.ListCreateAPIView):
         return DrugIdentificationSerializer
 
 
+@extend_schema_view(
+    get=extend_schema(
+        description='Retorna os dados de uma identificação de medicamento',
+        responses={200: DrugIdentificationListSerializer}
+    ),
+    put=extend_schema(
+        description='Atualiza todos os dados de uma identificação de medicamento',
+        request=DrugIdentificationSerializer,
+        responses={200: DrugIdentificationSerializer}
+    ),
+    patch=extend_schema(
+        description='Atualiza parcialmente os dados de uma identificação de medicamento',
+        request=DrugIdentificationSerializer,
+        responses={200: DrugIdentificationSerializer}
+    ),
+    delete=extend_schema(
+        description='Remove uma identificação de medicamento',
+        responses={204: None}
+    )
+)
 class DrugIdentificationRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
 
     permission_classes = (IsAuthenticated, GlobalDefaultPermissions,)
@@ -31,6 +63,12 @@ class DrugIdentificationRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDest
         return DrugIdentificationSerializer
 
 
+@extend_schema_view(
+    get=extend_schema(
+        description='Retorna estatísticas dos medicamentos identificados',
+        responses={200: OpenApiTypes.OBJECT}
+    )
+)
 class DrugIdentificationStatsView(views.APIView):
     permission_classes = (IsAuthenticated,)
     queryset = DrugIdentification.objects.all()
