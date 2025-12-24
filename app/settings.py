@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'manufacturers',
     'drug_identification',
     'ai_integration_with_api',
+    'documentation_swagger',
 ]
 
 MIDDLEWARE = [
