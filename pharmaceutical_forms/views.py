@@ -9,12 +9,14 @@ from pharmaceutical_forms.serializers import PharmaceuticalFormsSerializer
 @extend_schema_view(
     get=extend_schema(
         description='Retorna todas as formas farmacêuticas',
-        responses={200: PharmaceuticalFormsSerializer}
+        responses={200: PharmaceuticalFormsSerializer},
+        tags=['Formas Farmacêuticas']
     ),
     post=extend_schema(
         description='Criar uma forma farmacêutica',
         request=PharmaceuticalFormsSerializer,
-        responses={201: PharmaceuticalFormsSerializer}
+        responses={201: PharmaceuticalFormsSerializer},
+        tags=['Formas Farmacêuticas']
     )
 )
 class PharmaceuticalFormsListCreateApiView(generics.ListCreateAPIView):
@@ -27,21 +29,25 @@ class PharmaceuticalFormsListCreateApiView(generics.ListCreateAPIView):
 @extend_schema_view(
     get=extend_schema(
         description='Retorna os dados de uma forma farmacêutica',
-        responses={200: PharmaceuticalFormsSerializer}
+        responses={200: PharmaceuticalFormsSerializer},
+        tags=['Formas Farmacêuticas']
     ),
     put=extend_schema(
         description='Atualiza todos os dados de uma forma farmacêutica',
         request=PharmaceuticalFormsSerializer,
-        responses={200: PharmaceuticalFormsSerializer}
+        responses={200: PharmaceuticalFormsSerializer},
+        tags=['Formas Farmacêuticas']
     ),
     patch=extend_schema(
         description='Atualiza parcialmente os dados de uma forma farmacêutica',
         request=PharmaceuticalFormsSerializer,
-        responses={200: PharmaceuticalFormsSerializer}
+        responses={200: PharmaceuticalFormsSerializer},
+        tags=['Formas Farmacêuticas']
     ),
     delete=extend_schema(
         description='Remove uma forma farmacêutica',
-        responses={204: None}
+        responses={204: None},
+        tags=['Formas Farmacêuticas']
     )
 )
 class PharmaceuticalFormsRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):

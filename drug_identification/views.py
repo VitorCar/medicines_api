@@ -13,12 +13,14 @@ from routes_of_administration.models import RoutesOfAdministration
 @extend_schema_view(
     get=extend_schema(
         description='Retorna todas identificação de medicamentos',
-        responses={200: DrugIdentificationListSerializer}
+        responses={200: DrugIdentificationListSerializer},
+        tags=['Identificação de Medicamentos']
     ),
     post=extend_schema(
         description='Criar uma identificação de medicamento',
         request=DrugIdentificationSerializer,
-        responses={201: DrugIdentificationSerializer}
+        responses={201: DrugIdentificationSerializer},
+        tags=['Identificação de Medicamentos']
     )
 )
 class DrugIdentificationListCreateAPIView(generics.ListCreateAPIView):
@@ -35,21 +37,25 @@ class DrugIdentificationListCreateAPIView(generics.ListCreateAPIView):
 @extend_schema_view(
     get=extend_schema(
         description='Retorna os dados de uma identificação de medicamento',
-        responses={200: DrugIdentificationListSerializer}
+        responses={200: DrugIdentificationListSerializer},
+        tags=['Identificação de Medicamentos']
     ),
     put=extend_schema(
         description='Atualiza todos os dados de uma identificação de medicamento',
         request=DrugIdentificationSerializer,
-        responses={200: DrugIdentificationSerializer}
+        responses={200: DrugIdentificationSerializer},
+        tags=['Identificação de Medicamentos']
     ),
     patch=extend_schema(
         description='Atualiza parcialmente os dados de uma identificação de medicamento',
         request=DrugIdentificationSerializer,
-        responses={200: DrugIdentificationSerializer}
+        responses={200: DrugIdentificationSerializer},
+        tags=['Identificação de Medicamentos']
     ),
     delete=extend_schema(
         description='Remove uma identificação de medicamento',
-        responses={204: None}
+        responses={204: None},
+        tags=['Identificação de Medicamentos']
     )
 )
 class DrugIdentificationRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -66,7 +72,8 @@ class DrugIdentificationRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDest
 @extend_schema_view(
     get=extend_schema(
         description='Retorna estatísticas dos medicamentos identificados',
-        responses={200: OpenApiTypes.OBJECT}
+        responses={200: OpenApiTypes.OBJECT},
+        tags=['Identificação de Medicamentos']
     )
 )
 class DrugIdentificationStatsView(views.APIView):

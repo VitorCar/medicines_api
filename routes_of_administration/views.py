@@ -9,12 +9,14 @@ from routes_of_administration.serializers import RoutesOfAdministrationSerialize
 @extend_schema_view(
     get=extend_schema(
         description='Retorna todas as vias de administração',
-        responses={200: RoutesOfAdministrationSerializer}
+        responses={200: RoutesOfAdministrationSerializer},
+        tags=['Vias de Administração']
     ),
     post=extend_schema(
         description='Criar uma via de administração',
         request=RoutesOfAdministrationSerializer,
-        responses={201: RoutesOfAdministrationSerializer}
+        responses={201: RoutesOfAdministrationSerializer},
+        tags=['Vias de Administração']
     )
 )
 class RoutesOfAdministrationListCreateAPIView(generics.ListCreateAPIView):
@@ -27,21 +29,25 @@ class RoutesOfAdministrationListCreateAPIView(generics.ListCreateAPIView):
 @extend_schema_view(
     get=extend_schema(
         description='Retorna os dados de uma via de administração',
-        responses={200: RoutesOfAdministrationSerializer}
+        responses={200: RoutesOfAdministrationSerializer},
+        tags=['Vias de Administração']
     ),
     put=extend_schema(
         description='Atualiza todos os dados de uma via de administração',
         request=RoutesOfAdministrationSerializer,
-        responses={200: RoutesOfAdministrationSerializer}
+        responses={200: RoutesOfAdministrationSerializer},
+        tags=['Vias de Administração']
     ),
     patch=extend_schema(
         description='Atualiza parcialmente os dados de uma via de administração',
         request=RoutesOfAdministrationSerializer,
-        responses={200: RoutesOfAdministrationSerializer}
+        responses={200: RoutesOfAdministrationSerializer},
+        tags=['Vias de Administração']
     ),
     delete=extend_schema(
         description='Remove uma via de administração',
-        responses={204: None}
+        responses={204: None},
+        tags=['Vias de Administração']
     )
 )
 class RoutesOfAdministrationRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):

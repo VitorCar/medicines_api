@@ -9,12 +9,14 @@ from manufacturers.serializers import ManufacturersSerializer
 @extend_schema_view(
     get=extend_schema(
         description='Retorna todos os fabricantes e seus dados',
-        responses={200: ManufacturersSerializer}
+        responses={200: ManufacturersSerializer},
+        tags=['Fabricantes']
     ),
     post=extend_schema(
         description='Criar um fabricante',
         request=ManufacturersSerializer,
-        responses={201: ManufacturersSerializer}
+        responses={201: ManufacturersSerializer},
+        tags=['Fabricantes']
     )
 )
 class ManufacturersListCreateAPIView(generics.ListCreateAPIView):
@@ -27,21 +29,25 @@ class ManufacturersListCreateAPIView(generics.ListCreateAPIView):
 @extend_schema_view(
     get=extend_schema(
         description='Retorna os dados de um fabricante específico',
-        responses={200: ManufacturersSerializer}
+        responses={200: ManufacturersSerializer},
+        tags=['Fabricantes']
     ),
     put=extend_schema(
         description='Atualiza todos os dados de um fabricante',
         request=ManufacturersSerializer,
-        responses={200: ManufacturersSerializer}
+        responses={200: ManufacturersSerializer},
+        tags=['Fabricantes']
     ),
     patch=extend_schema(
         description='Atualiza parcialmente os dados de um fabricante',
         request=ManufacturersSerializer,
-        responses={200: ManufacturersSerializer}
+        responses={200: ManufacturersSerializer},
+        tags=['Fabricantes']
     ),
     delete=extend_schema(
         description='Remove um fabricante do sistema',
-        responses={204: None}
+        responses={204: None},
+        tags=['Fabricantes']
     )
 )
 class ManufacturersRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):

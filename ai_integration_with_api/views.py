@@ -22,7 +22,8 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         400: OpenApiTypes.OBJECT,
         502: OpenApiTypes.OBJECT,
         500: OpenApiTypes.OBJECT
-    }
+    },
+    tags=['Integração com IA']
 )
 class SearchPharmacyAPIView(views.APIView):
     permission_classes = (IsAuthenticated,)
@@ -83,7 +84,8 @@ class SearchPharmacyAPIView(views.APIView):
         400: OpenApiTypes.OBJECT,
         502: OpenApiTypes.OBJECT,
         500: OpenApiTypes.OBJECT
-    }
+    },
+    tags=['Integração com IA']
 )
 class MedicineLeafletAPIView(views.APIView):
     permission_classes = (IsAuthenticated,)
