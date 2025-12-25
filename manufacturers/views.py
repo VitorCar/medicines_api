@@ -53,5 +53,5 @@ class ManufacturersListCreateAPIView(generics.ListCreateAPIView):
 class ManufacturersRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
 
     permission_classes = (IsAuthenticated, GlobalDefaultPermissions,)
-    queryset = Manufacturers
+    queryset = Manufacturers.objects.all()
     serializer_class = ManufacturersSerializer
