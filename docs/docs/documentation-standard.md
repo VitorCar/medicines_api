@@ -238,7 +238,23 @@ Este padrão garante que a **Medicines API** seja:
 * Fácil de manter
 * Pronta para consumo externo
 
+---
+
 ## Consulte o Swagger para detalhes técnicos:
 [Swagger UI](http://localhost:8000/api/swagger/)
+
+---
+
+## Postman
+
+A Medicines API disponibiliza uma collection oficial do Postman.
+
+📁 Local: `postman/collections/medicines_api.postman_collection.json`
+
+### Como usar
+1. Importar a collection
+2. Importar o environment
+3. Autenticar
+4. Testar endpoints
 
 >  Qualquer novo endpoint **deve seguir este documento**.
