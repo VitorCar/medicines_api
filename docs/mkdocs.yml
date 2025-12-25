@@ -1,0 +1,26 @@
+site_name: My Docs
+site_name: Medicines API
+site_description: Documentação oficial da Medicines API
+site_author: Vitor Carvalho
+
+theme:
+  name: material
+  language: pt
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Visão Geral: overview.md
+  - Autenticação: authentication.md
+  - Padrão de Documentação: documentation-standard.md
+  - Endpoints:
+      - Manufacturers: endpoints/manufacturers.md
+      - Pharmaceutical Forms: endpoints/pharmaceutical-forms.md
+      - Routes of Administration: endpoints/routes-of-administration.md
+      - Drug Identification: endpoints/drug-identification.md
+      - IA (Gemini): endpoints/ai.md
+  - Swagger:
+      - Swagger UI: swagger.md
