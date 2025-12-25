@@ -3,7 +3,7 @@
 A Medicines API utiliza **Swagger (OpenAPI 3)** como contrato oficial da API.
 
 ## Acesso
-- Swagger UI: http://localhost:8000/api/schema/swagger/
+- Swagger UI: http://localhost:8000/api/swagger/
 - Schema OpenAPI: http://localhost:8000/api/schema/
 
 ## Regra
