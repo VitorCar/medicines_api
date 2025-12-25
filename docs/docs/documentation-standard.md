@@ -238,4 +238,7 @@ Este padrão garante que a **Medicines API** seja:
 * Fácil de manter
 * Pronta para consumo externo
 
+## Consulte o Swagger para detalhes técnicos:
+[Swagger UI](http://localhost:8000/api/swagger/)
+
 >  Qualquer novo endpoint **deve seguir este documento**.
