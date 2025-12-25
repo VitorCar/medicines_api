@@ -1,0 +1,3362 @@
+{
+	"info": {
+		"_postman_id": "d13c5cb8-686a-4776-b18e-2d246c7c5a1e",
+		"name": "Medicines API",
+		"description": "API REST para gerenciamento de medicamentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48048901",
+		"_collection_link": "https://vtocarvalho-2298677.postman.co/workspace/Vitor's-Workspace~f48c9eea-e3df-435c-8299-ed06749321fc/collection/48048901-d13c5cb8-686a-4776-b18e-2d246c7c5a1e?action=share&source=collection_link&creator=48048901"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "administration",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "v1 administration retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/administration/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"administration",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Retorna os dados de uma via de administração"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/administration/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"administration",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 4994,\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 administration update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/administration/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"administration",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza todos os dados de uma via de administração"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/administration/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"administration",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 4994,\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 administration partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/administration/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"administration",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza parcialmente os dados de uma via de administração"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/administration/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"administration",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 4994,\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 administration destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/administration/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"administration",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Remove uma via de administração"
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/administration/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"administration",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "v1 administration list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/administration/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"administration",
+												""
+											]
+										},
+										"description": "Retorna todas as vias de administração"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/administration/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"administration",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": 2360,\n    \"name\": \"string\",\n    \"type\": \"TOP\",\n    \"description\": \"string\"\n  },\n  {\n    \"id\": 6035,\n    \"name\": \"string\",\n    \"type\": \"ENT\",\n    \"description\": \"string\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "v1 administration create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/administration/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"administration",
+												""
+											]
+										},
+										"description": "Criar uma via de administração"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/administration/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"administration",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 4994,\n  \"name\": \"string\",\n  \"type\": \"TOP\",\n  \"description\": \"string\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ai",
+							"item": [
+								{
+									"name": "leaflet",
+									"item": [
+										{
+											"name": "v1 ai leaflet create",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/ai/leaflet/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"ai",
+														"leaflet",
+														""
+													]
+												},
+												"description": "Gera uma ficha técnica resumida para um medicamento especificado, utilizando inteligência artificial."
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/leaflet/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"leaflet",
+																""
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												},
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/leaflet/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"leaflet",
+																""
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												},
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/leaflet/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"leaflet",
+																""
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												},
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/leaflet/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"leaflet",
+																""
+															]
+														}
+													},
+													"status": "Bad Gateway",
+													"code": 502,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "pharmacy",
+									"item": [
+										{
+											"name": "v1 ai pharmacy create",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"city\": \"Belo Horizonte\",\n    \"state\": \"MG\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/ai/pharmacy/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"ai",
+														"pharmacy",
+														""
+													]
+												},
+												"description": "Busca uma lista de farmácias reais em uma cidade e estado especificados, utilizando inteligência artificial."
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/pharmacy/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"pharmacy",
+																""
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												},
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/pharmacy/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"pharmacy",
+																""
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												},
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/pharmacy/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"pharmacy",
+																""
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												},
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/ai/pharmacy/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"ai",
+																"pharmacy",
+																""
+															]
+														}
+													},
+													"status": "Bad Gateway",
+													"code": 502,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "authentication",
+							"item": [
+								{
+									"name": "token",
+									"item": [
+										{
+											"name": "refresh",
+											"item": [
+												{
+													"name": "v1 authentication token refresh create",
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"refresh\": \"string\",\n  \"access\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/authentication/token/refresh/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"authentication",
+																"token",
+																"refresh",
+																""
+															]
+														},
+														"description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid."
+													},
+													"response": [
+														{
+															"name": "Untitled Response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"refresh\": \"string\",\n  \"access\": \"string\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/authentication/token/refresh/",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"authentication",
+																		"token",
+																		"refresh",
+																		""
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"access\": \"string\",\n  \"refresh\": \"string\"\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "verify",
+											"item": [
+												{
+													"name": "v1 authentication token verify create",
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"token\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/authentication/token/verify/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"authentication",
+																"token",
+																"verify",
+																""
+															]
+														},
+														"description": "Takes a token and indicates if it is valid.  This view provides no\ninformation about a token's fitness for a particular use."
+													},
+													"response": [
+														{
+															"name": "Untitled Response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"token\": \"string\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/authentication/token/verify/",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"authentication",
+																		"token",
+																		"verify",
+																		""
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"token\": 535.116302020462\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "v1 authentication token create",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"password\": \"string\",\n  \"username\": \"string\",\n  \"access\": 5434,\n  \"refresh\": 6655.038420241533\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/authentication/token/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"authentication",
+														"token",
+														""
+													]
+												},
+												"description": "Takes a set of user credentials and returns an access and refresh JSON web\ntoken pair to prove the authentication of those credentials."
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"password\": \"string\",\n  \"username\": \"string\",\n  \"access\": 5434,\n  \"refresh\": 6655.038420241533\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/authentication/token/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"authentication",
+																"token",
+																""
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"access\": \"string\",\n  \"refresh\": \"string\",\n  \"password\": \"string\",\n  \"username\": 6621\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "drug",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "v1 drug retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/drug/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"drug",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Retorna os dados de uma identificação de medicamento"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/drug/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"drug",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"active_ingredient\": \"string\",\n  \"created_at\": \"2025-10-20T03:37:58.150Z\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"id\": 8701,\n  \"manufacturers\": [\n    {\n      \"id\": 5223,\n      \"name\": \"string\",\n      \"Address\": \"string\",\n      \"contact_details\": \"string\"\n    },\n    {\n      \"id\": 6313,\n      \"name\": \"string\",\n      \"Address\": \"string\",\n      \"contact_details\": \"string\"\n    }\n  ],\n  \"medical_prescription\": \"SIM\",\n  \"observation_doping\": \"string\",\n  \"observation_prescription\": \"string\",\n  \"pharmaceutical_form\": [\n    {\n      \"category\": \"LIQ\",\n      \"id\": 734,\n      \"name\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"category\": \"GAS\",\n      \"id\": 6515,\n      \"name\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    {\n      \"id\": 9122,\n      \"name\": \"string\",\n      \"type\": \"TOP\",\n      \"description\": \"string\"\n    },\n    {\n      \"id\": 8062,\n      \"name\": \"string\",\n      \"type\": \"TOP\",\n      \"description\": \"string\"\n    }\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"updated_at\": \"2007-07-17T05:26:21.468Z\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"1995-08-15\",\n  \"validity\": \"2001-04-03\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 drug update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"active_ingredient\": \"string\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"manufacturers\": [\n    324,\n    2320\n  ],\n  \"medical_prescription\": \"NAO\",\n  \"pharmaceutical_form\": [\n    9198,\n    3998\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    8407,\n    8800\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"1967-01-04\",\n  \"validity\": \"1971-04-25\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/drug/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"drug",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza todos os dados de uma identificação de medicamento"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"active_ingredient\": \"string\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"manufacturers\": [\n    324,\n    2320\n  ],\n  \"medical_prescription\": \"NAO\",\n  \"pharmaceutical_form\": [\n    9198,\n    3998\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    8407,\n    8800\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"1967-01-04\",\n  \"validity\": \"1971-04-25\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/drug/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"drug",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"active_ingredient\": \"string\",\n  \"created_at\": \"1988-05-10T18:01:10.235Z\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"id\": 6255,\n  \"manufacturers\": [\n    9946,\n    7317\n  ],\n  \"medical_prescription\": \"SIM\",\n  \"pharmaceutical_form\": [\n    1878,\n    2612\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    4859,\n    2831\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"updated_at\": \"1972-03-23T00:19:52.625Z\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"2004-02-18\",\n  \"validity\": \"1973-05-30\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 drug partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"trade_name\": \"string\",\n  \"generic_name\": \"string\",\n  \"type_of_medicine\": \"REF\",\n  \"indications\": \"string\",\n  \"presentation\": \"string\",\n  \"active_ingredient\": \"string\",\n  \"concentration\": \"string\",\n  \"storage_care\": \"string\",\n  \"medical_prescription\": \"NAO\",\n  \"doping_alert\": \"NAO\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"estimated_value\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"1961-02-15\",\n  \"validity\": \"1987-02-05\",\n  \"pharmaceutical_form\": [\n    4594,\n    5960\n  ],\n  \"routes_of_administration\": [\n    6776,\n    952\n  ],\n  \"manufacturers\": [\n    8009,\n    6181\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/drug/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"drug",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza parcialmente os dados de uma identificação de medicamento"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"trade_name\": \"string\",\n  \"generic_name\": \"string\",\n  \"type_of_medicine\": \"REF\",\n  \"indications\": \"string\",\n  \"presentation\": \"string\",\n  \"active_ingredient\": \"string\",\n  \"concentration\": \"string\",\n  \"storage_care\": \"string\",\n  \"medical_prescription\": \"NAO\",\n  \"doping_alert\": \"NAO\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"estimated_value\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"1961-02-15\",\n  \"validity\": \"1987-02-05\",\n  \"pharmaceutical_form\": [\n    4594,\n    5960\n  ],\n  \"routes_of_administration\": [\n    6776,\n    952\n  ],\n  \"manufacturers\": [\n    8009,\n    6181\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/drug/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"drug",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"active_ingredient\": \"string\",\n  \"created_at\": \"1988-05-10T18:01:10.235Z\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"id\": 6255,\n  \"manufacturers\": [\n    9946,\n    7317\n  ],\n  \"medical_prescription\": \"SIM\",\n  \"pharmaceutical_form\": [\n    1878,\n    2612\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    4859,\n    2831\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"updated_at\": \"1972-03-23T00:19:52.625Z\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"2004-02-18\",\n  \"validity\": \"1973-05-30\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 drug destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/drug/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"drug",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Remove uma identificação de medicamento"
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/drug/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"drug",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "stats",
+									"item": [
+										{
+											"name": "v1 drug stats retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/drug/stats/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"drug",
+														"stats",
+														""
+													]
+												},
+												"description": "Retorna estatísticas dos medicamentos identificados"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/drug/stats/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"drug",
+																"stats",
+																""
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"key_0\": 3358.167751425376,\n  \"key_1\": 2674,\n  \"key_2\": 348\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "v1 drug list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/drug/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"drug",
+												""
+											]
+										},
+										"description": "Retorna todas identificação de medicamentos"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/drug/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"drug",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"active_ingredient\": \"string\",\n    \"created_at\": \"1971-04-22T00:09:57.046Z\",\n    \"doping_alert\": \"NAO\",\n    \"estimated_value\": \"string\",\n    \"generic_name\": \"string\",\n    \"id\": 3401,\n    \"manufacturers\": [\n      {\n        \"id\": 267,\n        \"name\": \"string\",\n        \"Address\": \"string\",\n        \"contact_details\": \"string\"\n      },\n      {\n        \"id\": 7483,\n        \"name\": \"string\",\n        \"Address\": \"string\",\n        \"contact_details\": \"string\"\n      }\n    ],\n    \"medical_prescription\": \"SIM\",\n    \"observation_doping\": \"string\",\n    \"observation_prescription\": \"string\",\n    \"pharmaceutical_form\": [\n      {\n        \"category\": \"SOL\",\n        \"id\": 7520,\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"category\": \"LIQ\",\n        \"id\": 780,\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"presentation\": \"string\",\n    \"routes_of_administration\": [\n      {\n        \"id\": 4832,\n        \"name\": \"string\",\n        \"type\": \"ENT\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": 7263,\n        \"name\": \"string\",\n        \"type\": \"ENT\",\n        \"description\": \"string\"\n      }\n    ],\n    \"storage_care\": \"string\",\n    \"trade_name\": \"string\",\n    \"type_of_medicine\": \"GEN\",\n    \"updated_at\": \"1959-12-10T14:18:18.993Z\",\n    \"indications\": \"string\",\n    \"concentration\": \"string\",\n    \"contraindications\": \"string\",\n    \"precautions_and_warnings\": \"string\",\n    \"adverse_reactions\": \"string\",\n    \"batch_number\": \"string\",\n    \"manufacturing_date\": \"1996-04-05\",\n    \"validity\": \"1968-07-23\"\n  },\n  {\n    \"active_ingredient\": \"string\",\n    \"created_at\": \"1947-07-19T10:58:18.893Z\",\n    \"doping_alert\": \"NAO\",\n    \"estimated_value\": \"string\",\n    \"generic_name\": \"string\",\n    \"id\": 9347,\n    \"manufacturers\": [\n      {\n        \"id\": 1320,\n        \"name\": \"string\",\n        \"Address\": \"string\",\n        \"contact_details\": \"string\"\n      },\n      {\n        \"id\": 9818,\n        \"name\": \"string\",\n        \"Address\": \"string\",\n        \"contact_details\": \"string\"\n      }\n    ],\n    \"medical_prescription\": \"NAO\",\n    \"observation_doping\": \"string\",\n    \"observation_prescription\": \"string\",\n    \"pharmaceutical_form\": [\n      {\n        \"category\": \"SOL\",\n        \"id\": 3379,\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"category\": \"LIQ\",\n        \"id\": 2536,\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"presentation\": \"string\",\n    \"routes_of_administration\": [\n      {\n        \"id\": 1616,\n        \"name\": \"string\",\n        \"type\": \"PAR\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": 5663,\n        \"name\": \"string\",\n        \"type\": \"PAR\",\n        \"description\": \"string\"\n      }\n    ],\n    \"storage_care\": \"string\",\n    \"trade_name\": \"string\",\n    \"type_of_medicine\": \"REF\",\n    \"updated_at\": \"1995-02-15T13:00:48.357Z\",\n    \"indications\": \"string\",\n    \"concentration\": \"string\",\n    \"contraindications\": \"string\",\n    \"precautions_and_warnings\": \"string\",\n    \"adverse_reactions\": \"string\",\n    \"batch_number\": \"string\",\n    \"manufacturing_date\": \"1966-08-28\",\n    \"validity\": \"1983-08-05\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "v1 drug create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"active_ingredient\": \"string\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"manufacturers\": [\n    324,\n    2320\n  ],\n  \"medical_prescription\": \"NAO\",\n  \"pharmaceutical_form\": [\n    9198,\n    3998\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    8407,\n    8800\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"1967-01-04\",\n  \"validity\": \"1971-04-25\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/drug/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"drug",
+												""
+											]
+										},
+										"description": "Criar uma identificação de medicamento"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"active_ingredient\": \"string\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"manufacturers\": [\n    324,\n    2320\n  ],\n  \"medical_prescription\": \"NAO\",\n  \"pharmaceutical_form\": [\n    9198,\n    3998\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    8407,\n    8800\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"1967-01-04\",\n  \"validity\": \"1971-04-25\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/drug/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"drug",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"active_ingredient\": \"string\",\n  \"created_at\": \"1988-05-10T18:01:10.235Z\",\n  \"doping_alert\": \"NAO\",\n  \"estimated_value\": \"string\",\n  \"generic_name\": \"string\",\n  \"id\": 6255,\n  \"manufacturers\": [\n    9946,\n    7317\n  ],\n  \"medical_prescription\": \"SIM\",\n  \"pharmaceutical_form\": [\n    1878,\n    2612\n  ],\n  \"presentation\": \"string\",\n  \"routes_of_administration\": [\n    4859,\n    2831\n  ],\n  \"storage_care\": \"string\",\n  \"trade_name\": \"string\",\n  \"type_of_medicine\": \"SIM\",\n  \"updated_at\": \"1972-03-23T00:19:52.625Z\",\n  \"indications\": \"string\",\n  \"concentration\": \"string\",\n  \"contraindications\": \"string\",\n  \"precautions_and_warnings\": \"string\",\n  \"adverse_reactions\": \"string\",\n  \"batch_number\": \"string\",\n  \"manufacturing_date\": \"2004-02-18\",\n  \"validity\": \"1973-05-30\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "manufacturers",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "v1 manufacturers retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"manufacturers",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Retorna os dados de um fabricante específico"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"manufacturers",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 2514,\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 manufacturers update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"manufacturers",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza todos os dados de um fabricante"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"manufacturers",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 2514,\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 manufacturers partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"manufacturers",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza parcialmente os dados de um fabricante"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"manufacturers",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 2514,\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 manufacturers destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"manufacturers",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Remove um fabricante do sistema"
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/manufacturers/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"manufacturers",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "v1 manufacturers list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/manufacturers/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"manufacturers",
+												""
+											]
+										},
+										"description": "Retorna todos os fabricantes e seus dados"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/manufacturers/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"manufacturers",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": 6512,\n    \"name\": \"string\",\n    \"Address\": \"string\",\n    \"contact_details\": \"string\"\n  },\n  {\n    \"id\": 4472,\n    \"name\": \"string\",\n    \"Address\": \"string\",\n    \"contact_details\": \"string\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "v1 manufacturers create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/manufacturers/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"manufacturers",
+												""
+											]
+										},
+										"description": "Criar um fabricante"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/manufacturers/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"manufacturers",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 2514,\n  \"name\": \"string\",\n  \"Address\": \"string\",\n  \"contact_details\": \"string\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "pharmaceutical",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "v1 pharmaceutical retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"pharmaceutical",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Retorna os dados de uma forma farmacêutica"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"pharmaceutical",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"category\": \"GAS\",\n  \"id\": 7931,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 pharmaceutical update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"category\": \"SEM\",\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"pharmaceutical",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza todos os dados de uma forma farmacêutica"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"category\": \"SEM\",\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"pharmaceutical",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"category\": \"GAS\",\n  \"id\": 7931,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 pharmaceutical partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"category\": \"SEM\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"pharmaceutical",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Atualiza parcialmente os dados de uma forma farmacêutica"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"string\",\n  \"category\": \"SEM\",\n  \"description\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"pharmaceutical",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"category\": \"GAS\",\n  \"id\": 7931,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "v1 pharmaceutical destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"pharmaceutical",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3900"
+														}
+													]
+												},
+												"description": "Remove uma forma farmacêutica"
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/pharmaceutical/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"pharmaceutical",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "3900"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "v1 pharmaceutical list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/pharmaceutical/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"pharmaceutical",
+												""
+											]
+										},
+										"description": "Retorna todas as formas farmacêuticas"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/pharmaceutical/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"pharmaceutical",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"category\": \"SEM\",\n    \"id\": 7242,\n    \"name\": \"string\",\n    \"description\": \"string\"\n  },\n  {\n    \"category\": \"SEM\",\n    \"id\": 531,\n    \"name\": \"string\",\n    \"description\": \"string\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "v1 pharmaceutical create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"category\": \"SEM\",\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/pharmaceutical/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"pharmaceutical",
+												""
+											]
+										},
+										"description": "Criar uma forma farmacêutica"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"category\": \"SEM\",\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/pharmaceutical/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"pharmaceutical",
+														""
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"category\": \"GAS\",\n  \"id\": 7931,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
