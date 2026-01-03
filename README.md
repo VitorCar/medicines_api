@@ -405,7 +405,7 @@ docker-compose run medicines_api_web python manage.py makemigrations
 
 ---
 
-🔄 Integração Contínua (CI)
+## 🔄 Integração Contínua (CI)
 
 Este projeto utiliza GitHub Actions para Integração Contínua (CI), garantindo qualidade e estabilidade do código.
 
