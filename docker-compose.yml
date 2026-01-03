@@ -6,10 +6,8 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: medicines_api
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: mysql
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: medicines_api
     volumes:
       - mysql_data:/var/lib/mysql
 
