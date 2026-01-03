@@ -1,13 +1,21 @@
 services:
-
   medicines_api_db:
     image: mysql:8.0
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: medicines_api
+      # ADICIONADO: Cria o usuário específico que o Django vai usar
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
     volumes:
       - mysql_data:/var/lib/mysql
+    # ADICIONADO: O banco avisa quando está pronto
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   medicines_api_web:
     build: .
@@ -16,9 +24,11 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - medicines_api_db
+      medicines_api_db:
+        condition: service_healthy # ADICIONADO: Espera o healthcheck passar
     env_file:
       - .env
 
 volumes:
   mysql_data:
+  
