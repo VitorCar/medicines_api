@@ -21,8 +21,8 @@ jobs:
           echo "ALLOWED_HOSTS=localhost,127.0.0.1" >> .env
           echo "DB_NAME=medicines_api" >> .env
           # Agora estes dados batem com o docker-compose.yml
-          echo "DB_USER=mysql" >> .env
-          echo "DB_PASSWORD=mysql" >> .env
+          echo "DB_USER=root" >> .env
+          echo "DB_PASSWORD=root" >> .env
           echo "DB_HOST=medicines_api_db" >> .env
           echo "DB_PORT=3306" >> .env
           echo "GEMINI_API_KEY=dummy-key" >> .env
