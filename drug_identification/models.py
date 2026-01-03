@@ -35,7 +35,9 @@ class DrugIdentification(models.Model):
     adverse_reactions = models.TextField(null=True, blank=True)
     manufacturers = models.ManyToManyField(Manufacturers, related_name='identification')
     estimated_value = models.CharField(max_length=100)
-    batch_number = models.CharField(null=True, blank=True)
+    batch_number = models.CharField(max_length=50,
+                                    null=True, 
+                                    blank=True)
     manufacturing_date = models.DateField(null=True, blank=True)
     validity = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

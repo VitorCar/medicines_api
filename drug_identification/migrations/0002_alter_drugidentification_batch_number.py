@@ -13,6 +13,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='drugidentification',
             name='batch_number',
-            field=models.CharField(blank=True, null=True),
+            field=models.CharField(max_length=50,
+                                   blank=True,
+                                    null=True),
         ),
     ]

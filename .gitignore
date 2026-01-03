@@ -40,3 +40,4 @@ local_settings.py
 # Pipenv files (if using Pipenv)
 Pipfile.lock
 senha.txt
+docker_information.txt

@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+
+  medicines_api_db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: medicines_api
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  medicines_api_web:
+    build: .
+    restart: always
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - medicines_api_db
+    env_file:
+      - .env
+
+volumes:
+  mysql_data:
