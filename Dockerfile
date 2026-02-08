@@ -2,8 +2,8 @@ FROM python:3.12-slim
 
 WORKDIR /medicines_api
 
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 # Dependências do sistema para mysqlclient
 RUN apt-get update \
