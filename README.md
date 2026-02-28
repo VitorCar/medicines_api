@@ -327,7 +327,7 @@ python manage.py export <id_do_medicamento>
 ```
 
 ### Gerar PDF com estatísticas gerais (Manual)
-````bash
+```bash
 python manage.py stats
 ```
 * (Nota: Este comando também é executado de forma autônoma pelo Cron).
