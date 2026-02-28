@@ -1,5 +1,7 @@
 # 💊 Medicines API
 
+[![CI – Medicines API (Docker)](https://github.com/VitorCar/medicines_api/actions/workflows/ci.yml/badge.svg)](https://github.com/VitorCar/medicines_api/actions/workflows/ci.yml)
+
 API RESTful para gerenciamento completo de **medicamentos**, desenvolvida com **Django**, **Django Rest Framework (DRF)** e boas práticas profissionais de backend.
 
 Este projeto foi pensado como **API de nível mercado**, com autenticação JWT, versionamento, documentação completa e integração com ferramentas modernas.
@@ -16,6 +18,7 @@ Este projeto foi pensado como **API de nível mercado**, com autenticação JWT,
 * drf-spectacular (Swagger / OpenAPI)
 * Docker & Docker Compose
 * MySQL
+* GitHub Actions (CI/CD)
 * Postman
 * MkDocs (Documentação)
 
@@ -402,6 +405,25 @@ docker-compose run medicines_api_web python manage.py makemigrations
 
 ---
 
+## 🔄 Integração Contínua (CI)
+
+Este projeto utiliza GitHub Actions para Integração Contínua (CI), garantindo qualidade e estabilidade do código.
+
+A cada push ou pull request para a branch main, o pipeline executa automaticamente:
+
+Build da aplicação via Docker
+
+Subida dos serviços com docker-compose
+
+Execução de migrations
+
+Execução de testes automatizados
+
+Validação da integração com MySQL
+
+📌 O CI utiliza a mesma configuração Docker do ambiente local, garantindo consistência entre desenvolvimento e integração.
+
+---
 
 ## 🎯 Status do Projeto
 
