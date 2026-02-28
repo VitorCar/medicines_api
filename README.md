@@ -18,6 +18,7 @@ Este projeto foi pensado como **API de nível mercado**, com autenticação JWT,
 * drf-spectacular (Swagger / OpenAPI)
 * Docker & Docker Compose
 * MySQL
+* Cron (Linux Background Tasks)
 * GitHub Actions (CI/CD)
 * Postman
 * MkDocs (Documentação)
@@ -299,6 +300,18 @@ User → API → Serviço de IA (Gemini) → API → User
 
 ---
 
+## ⏱️Automação de Relatórios (Cron & Docker Volumes)
+
+O projeto possui um sistema automatizado para extração de métricas executado inteiramente em background, demonstrando o uso avançado de infraestrutura Docker.
+
+* Agendamento Linux: Utiliza o daemon do cron isolado dentro do container web.
+
+* Histórico Dinâmico: Os relatórios em PDF são gerados com timestamps (ex: stats_20260228_1750.pdf), criando um histórico contínuo de dados.
+
+* Bind Mounts: Através de volumes do Docker, os PDFs gerados dentro do container Linux são exportados automaticamente e em tempo real para a máquina física (host).
+
+---
+
 ## 🛠️ Comandos Customizados
 
 ### Listar medicamentos cadastrados
@@ -313,6 +326,12 @@ python manage.py get_id
 python manage.py export <id_do_medicamento>
 ```
 
+### Gerar PDF com estatísticas gerais (Manual)
+````bash
+python manage.py stats
+```
+* (Nota: Este comando também é executado de forma autônoma pelo Cron).
+
 ---
 
 ## 🐳 Docker (Execução Profissional)
@@ -326,7 +345,7 @@ Este projeto utiliza **Docker** para garantir:
 
 ### 📦 Containers utilizados
 
-* **medicines_api_web** → Django + DRF
+* **medicines_api_web** → Django + DRF + Cron
 * **medicines_api_db** → MySQL
 
 ---
@@ -363,6 +382,9 @@ DB_USER=mysql
 DB_PASSWORD=mysql
 DB_HOST=medicines_api_db
 DB_PORT=3306
+
+# Caminho da pasta local para salvar os relatórios em PDF
+HOST_DOCUMENTS_PATH=../
 ```
 
 ---
