@@ -1,0 +1,2 @@
+0 0 * * 0 . /etc/environment && cd /medicines_api && /usr/local/bin/python /medicines_api/manage.py stats --output /saida_documentos/drug_identification_stats.pdf >> /var/log/cron.log 2>&1
+# rodar todo Domingo à meia-noite

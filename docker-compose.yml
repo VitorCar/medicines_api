@@ -20,7 +20,7 @@ services:
   medicines_api_web:
     build: .
     restart: always
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "printenv > /etc/environment && cron && python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
     depends_on:
@@ -28,7 +28,7 @@ services:
         condition: service_healthy # ADICIONADO: Espera o healthcheck passar
     env_file:
       - .env
-
+    volumes:
+      - "${HOST_DOCUMENTS_PATH}:/saida_documentos"
 volumes:
   mysql_data:
-  
