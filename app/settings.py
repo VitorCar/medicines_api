@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +34,8 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
+STATIC_URL = "/static/"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Application definition
 
@@ -58,6 +61,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,7 +93,51 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-if ENVIRONMENT == 'prd':
+# if ENVIRONMENT == 'prd':
+
+#     db_url = os.getenv("DATABASE_URL")
+
+#     if db_url:
+#         DATABASES = {
+#             "default": dj_database_url.config(
+#                 default=db_url
+#             )
+#         }
+
+
+#     elif os.getenv("DB_HOST"):
+#         DATABASES = {
+#             "default": {
+#                 "ENGINE": "django.db.backends.mysql",
+#                 "NAME": os.getenv("DB_NAME"),
+#                 "USER": os.getenv("DB_USER"),
+#                 "PASSWORD": os.getenv("DB_PASSWORD"),
+#                 "HOST": os.getenv("DB_HOST"),
+#                 "PORT": os.getenv("DB_PORT"),
+#                 "OPTIONS": {
+#                     "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+#                 },
+#             },
+#         }
+
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+    
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if DATABASE_URL:
+    # PRODUÇÃO (Render - PostgreSQL)
+    DATABASES = {
+        "default": dj_database_url.parse(DATABASE_URL)
+    }
+
+elif os.getenv("DB_HOST"):
+    # DOCKER (MySQL)
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
@@ -101,16 +149,25 @@ if ENVIRONMENT == 'prd':
             "OPTIONS": {
                 "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
             },
-        },
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-    
+
+else:
+    # DESENVOLVIMENTO LOCAL
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS", "localhost"
+).split(",")
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
