@@ -166,9 +166,9 @@ else:
     }
 
 ALLOWED_HOSTS = os.getenv(
-    "ALLOWED_HOSTS", "localhost"
+    "ALLOWED_HOSTS",
+    "localhost,127.0.0.1"
 ).split(",")
-
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
