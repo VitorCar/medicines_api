@@ -32,8 +32,6 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'unsafe_default_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-
 STATIC_URL = "/static/"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -172,6 +170,11 @@ ALLOWED_HOSTS = os.getenv(
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://medicines-api-xdec.onrender.com",
+]
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
