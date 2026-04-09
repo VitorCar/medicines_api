@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from user_view import create_superuser_secret
 
 
 urlpatterns = [
@@ -29,4 +30,6 @@ urlpatterns = [
     path('api/v1/', include('manufacturers.urls')),
     path('api/v1/', include('drug_identification.urls')),
     path('api/v1/', include('ai_integration_with_api.urls')),
+
+    path('api/setup-admin/', create_superuser_secret, name='setup-admin'),
 ]
