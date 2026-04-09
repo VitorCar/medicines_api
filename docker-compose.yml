@@ -26,6 +26,8 @@ services:
     depends_on:
       medicines_api_db:
         condition: service_healthy # ADICIONADO: Espera o healthcheck passar
+    environment:
+      - DOCKER_RUNNING=True
     env_file:
       - .env
     volumes:

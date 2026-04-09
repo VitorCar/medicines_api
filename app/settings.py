@@ -138,7 +138,9 @@ if DATABASE_URL:
         )
     }
 
-elif os.getenv("DB_HOST"):
+    DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
+
+elif os.getenv("DOCKER_RUNNING"):
     # DOCKER (MySQL)
     DATABASES = {
         "default": {
