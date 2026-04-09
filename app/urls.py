@@ -30,6 +30,4 @@ urlpatterns = [
     path('api/v1/', include('manufacturers.urls')),
     path('api/v1/', include('drug_identification.urls')),
     path('api/v1/', include('ai_integration_with_api.urls')),
-
-    path('api/setup-admin/', create_superuser_secret, name='setup-admin'),
 ]
