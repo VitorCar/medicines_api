@@ -1,13 +1,10 @@
 #!/bin/sh
 
-echo "Apply migrations..."
+echo "Applying migrations..."
 python manage.py migrate --noinput
 
-echo "Collect static..."
+echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
-echo "Create superuser automatically..."
-python manage.py createsuperuser --noinput || true
-
-echo "Starting server..."
+echo "Starting Gunicorn..."
 gunicorn app.wsgi:application --bind 0.0.0.0:$PORT
