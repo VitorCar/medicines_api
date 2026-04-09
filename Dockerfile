@@ -35,8 +35,12 @@ RUN sed -i 's/\r$//' /etc/cron.d/cron && \
 RUN touch /var/log/cron.log
 
 
+# COMANDO DE PRODUÇÃO (ESSENCIAL)
+# Copia entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 EXPOSE 8000
 
-
-# COMANDO DE PRODUÇÃO (ESSENCIAL)
-CMD gunicorn app.wsgi:application --bind 0.0.0.0:$PORT
+# ✅ ÚNICO CMD DO CONTAINER
+CMD ["/entrypoint.sh"]
