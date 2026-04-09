@@ -36,3 +36,7 @@ RUN touch /var/log/cron.log
 
 
 EXPOSE 8000
+
+
+# COMANDO DE PRODUÇÃO (ESSENCIAL)
+CMD gunicorn app.wsgi:application --bind 0.0.0.0:$PORT
